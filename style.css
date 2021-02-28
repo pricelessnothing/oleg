@@ -1,0 +1,270 @@
+/* template */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&display=swap');
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #222222;
+  --yellow: #ecc900;
+  --muted: #666666;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Raleway, sans-serif;
+}
+
+main a {
+  color: var(--black);
+  background-color: var(--yellow);
+}
+
+main a:hover {
+  color: var(--yellow);
+  background-color: var(--black);
+}
+
+/** CONTAINER **/
+
+.container{
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/** HEADER **/
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 90px;
+}
+
+.header-content a {
+  color: var(--black);
+  font-weight: bold;
+}
+
+.header-content a.feedback {
+  margin-right: 2em;
+  position: relative;
+}
+
+.header-content a.feedback::before {
+  position: absolute;
+  content: '';
+  background-color: var(--yellow);
+  left: -1em;
+  top: -1em;
+  bottom: -1em;
+  right: -1em;
+  transform: skew(-15deg);
+  z-index: -1;
+}
+
+.header-content .logo {
+  text-decoration: none;
+}
+
+/** FOOTER **/
+
+footer {
+  color: #fff;
+  background-color: var(--black);
+}
+
+footer p {
+  margin: 1em 0;
+  text-align: center;
+}
+/** MENU **/
+
+nav {
+  background-color: var(--black);
+}
+
+.nav-main {
+  display: flex;
+}
+
+.nav-main a {
+  flex: 1;
+  color: var(--yellow);
+  text-decoration: none;
+  text-align: center;
+  min-height: 40px;
+  line-height: 40px;
+  text-transform: uppercase;
+  transition: all .1s ease-in-out;
+}
+
+.nav-main a:hover {
+  background-color: var(--yellow);
+  color: var(--black);
+}
+
+
+/****/
+
+main {
+  flex: 1;
+}
+
+
+/** ERRORS **/
+.error-404 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-404 .code {
+  font-size: 15em;
+}
+
+.error-404 p {
+  text-align: center;
+  margin: 1em auto;
+}
+
+/** PART CATALOG PAGE **/
+.part-catalog-page {
+  display: flex;
+  margin: 1em auto;
+}
+
+/* catalog menu */
+.part-catalog-page .catalog-menu {
+  width: 12em;
+  margin: 0 0.5em;
+}
+
+.part-catalog-page .catalog-menu ul {
+  list-style: none;
+}
+
+.part-catalog-page .catalog-menu > ul > li {
+  border-bottom: 1px solid #fff;
+  background-color: #f1f1f1;
+}
+
+.part-catalog-page .catalog-menu ul li > ul {
+  display: none;
+  padding-left: 1em;
+  background-color: #fff;
+}
+
+.part-catalog-page .catalog-menu ul li.opened > ul {
+  display: block;
+}
+
+.part-catalog-page .catalog-menu a {
+  display: block;
+  padding: .5em;
+  background: none;
+  text-decoration: none;
+}
+
+.part-catalog-page .catalog-menu a:hover {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.part-catalog-page .catalog-menu li.opened > a {
+  background-color: var(--black);
+  color: var(--yellow);
+}
+
+.part-catalog-page .catalog-menu li.active > a {
+  background-color: var(--yellow);
+  pointer-events: none;
+}
+
+/* content part */
+.part-catalog-page > .parts {
+  flex: 1;
+}
+
+.part-catalog-page .no-parts-placeholder {
+  text-align: center;
+  margin-top: 2em;
+  color: var(--muted);
+}
+
+.part-catalog-page > .parts .parts-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.part-catalog-page > .parts .parts-container .part-card {
+  width: 12em;
+  min-height: 15em;
+  max-height: 15em;
+  margin: 1em;
+
+  background-color: #fff;
+  box-shadow: 0 0 1em #f1f1f1;
+
+  text-decoration: none;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.part-catalog-page > .parts .parts-container .part-card:hover {
+  box-shadow: 0 0 1em #c4c4c4;
+}
+
+.part-catalog-page > .parts .parts-container .part-card h2 {
+  margin: .3em;
+  font-size: 18px;
+}
+
+.part-catalog-page > .parts .parts-container .part-card h3 {
+  margin: .3em;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.part-catalog-page > .parts .parts-container .part-card img {
+  width: 12em;
+  height: 10em;
+  object-fit: cover;
+}

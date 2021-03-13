@@ -117,3 +117,27 @@ function get_image_src( $post ) {
     return get_template_directory_uri() . '/img/noimg.png';
   }
 }
+
+function general_settings_register_fields() {
+  register_setting( 'general', 'site_contact_phone', 'esc_attr' );
+  add_settings_field( 'site_contact_phone', '<label for="site_contact_phone">' . __( 'Контактный телефон', 'r47717' ) . '</label>', 'general_settings_phone_field_html', 'general' );
+
+  register_setting( 'general', 'site_contact_emails_textfield', 'esc_attr' );
+  add_settings_field( 'site_contact_emails_textfield', '<label for="site_contact_emails_textfield">' . __( 'Emails для сообщений', 'r47717' ) . '</label>', 'general_settings_emails_field_html', 'general' );
+}
+
+function general_settings_phone_field_html() {
+  $value = get_option( 'site_contact_phone', '' );
+  ?>
+  <input type="text" id="site_contact_phone" name="site_contact_phone" value="<?= $value ?>">
+  <?php
+}
+
+function general_settings_emails_field_html() {
+  $value = get_option( 'site_contact_emails_textfield', '' );
+  ?>
+  <textarea id="site_contact_emails_textfield" name="site_contact_emails_textfield" rows="6" cols="35"><?= $value ?></textarea>
+  <?php
+}
+
+add_filter( 'admin_init', 'general_settings_register_fields' );

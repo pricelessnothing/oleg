@@ -10,13 +10,16 @@
 <header>
   <div class="container header-content">
     <a href="<?= home_url(); ?>" class="logo">
-      <div class="logo__img">
-        ЛОГО
-      </div>
+      <img
+        class="logo__img"
+        src="<?= get_template_directory_uri() . './img/gears.svg' ?>"
+        alt="Альфа Партс"
+      >
+      ALFA PARTS
     </a>
     <div>
       <a href="#" class="feedback">Связаться с нами</a>
-      <a href="tel:+7 (800) 800-80-80">+7 (800) 800-80-80</a>
+      <a href="tel:<?= get_option( 'site_contact_phone' ); ?>"><?= get_option( 'site_contact_phone' ); ?></a>
     </div>
   </div>
 </header>

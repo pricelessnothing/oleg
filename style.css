@@ -100,6 +100,17 @@ main a:hover {
 
 .header-content .logo {
   text-decoration: none;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 48px;
+}
+
+.header-content .logo__img {
+  max-height: 80px;
+  width: auto;
+  object-fit: contain;
+  margin-right: 20px;
 }
 
 /** FOOTER **/

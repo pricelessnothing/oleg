@@ -12,7 +12,7 @@
     <a href="<?= home_url(); ?>" class="logo">
       <img
         class="logo__img"
-        src="<?= get_template_directory_uri() . './img/gears.svg' ?>"
+        src="<?= get_template_directory_uri() . '/img/gears.svg' ?>"
         alt="Альфа Партс"
       >
       ALFA PARTS

@@ -24,8 +24,8 @@
   <div class="container">
     <div class="nav-main">
       <a href="<?= get_post_type_archive_link('part') ?>">Каталог</a>
-      <a href="#">Как мы работаем</a>
-      <a href="#">Контакты</a>
+      <a href="<?= get_home_url() . '/shipping' ?>">Как мы работаем</a>
+      <a href="<?= get_home_url() . '/contacts' ?>">Контакты</a>
     </div>
   </div>
 </nav>

@@ -79,14 +79,14 @@ function category_select( $vehicle ) {
     <ul>
       <?php foreach( $vendors as $vendor ): ?>
         <li class="<?= $vendor['opened'] ? 'opened' : '' ?>">
-          <a href="<?= get_post_type_archive_link('parts') . '?vehicle=' . $vendor['slug']; ?>">
+          <a href="<?= get_post_type_archive_link('part') . '?vehicle=' . $vendor['slug']; ?>">
             <?= $vendor['name'] ?>
           </a>
         <?php if ( ! empty( $vendor['children'] ) ): ?>
           <ul>
             <?php foreach ( $vendor['children'] as $model ): ?>
               <li class="<?= $model['active'] ? 'active' : '' ?>">
-                <a href="<?= get_post_type_archive_link('parts') . '?vehicle=' . $model['slug'] ?>"><?= $model['name'] ?></a>
+                <a href="<?= get_post_type_archive_link('part') . '?vehicle=' . $model['slug'] ?>"><?= $model['name'] ?></a>
               </li>
             <?php endforeach; ?>
           </ul>

@@ -12,6 +12,7 @@
   --black: #222222;
   --yellow: #ecc900;
   --muted: #666666;
+  --light-grey: #f1f1f1;
 }
 
 body {
@@ -163,60 +164,62 @@ main {
   margin: 1em auto;
 }
 
-/** PART CATALOG PAGE **/
-.part-catalog-page {
-  display: flex;
-  margin: 1em auto;
-}
 
-/* catalog menu */
-.part-catalog-page .catalog-menu {
+/* CATALOG MENU */
+.catalog-menu {
   width: 12em;
   margin: 0 0.5em;
 }
 
-.part-catalog-page .catalog-menu ul {
+.catalog-menu ul {
   list-style: none;
 }
 
-.part-catalog-page .catalog-menu > ul > li {
+.catalog-menu > ul > li {
   border-bottom: 1px solid #fff;
-  background-color: #f1f1f1;
+  background-color: var(--light-grey);
 }
 
-.part-catalog-page .catalog-menu ul li > ul {
+.catalog-menu ul li > ul {
   display: none;
   padding-left: 1em;
   background-color: #fff;
 }
 
-.part-catalog-page .catalog-menu ul li.opened > ul {
+.catalog-menu ul li.opened > ul {
   display: block;
 }
 
-.part-catalog-page .catalog-menu a {
+.catalog-menu a {
   display: block;
   padding: .5em;
   background: none;
   text-decoration: none;
 }
 
-.part-catalog-page .catalog-menu a:hover {
+.catalog-menu a:hover {
   color: inherit;
+  background-color: inherit;
   text-decoration: underline;
 }
 
-.part-catalog-page .catalog-menu li.opened > a {
+.catalog-menu li.opened > a {
   background-color: var(--black);
   color: var(--yellow);
 }
 
-.part-catalog-page .catalog-menu li.active > a {
+.catalog-menu li.active > a {
   background-color: var(--yellow);
   pointer-events: none;
 }
 
-/* content part */
+
+/** PART CATALOG PAGE **/
+.part-catalog-page {
+  display: flex;
+  margin: 1em auto;
+}
+
 .part-catalog-page > .parts {
   flex: 1;
 }
@@ -227,19 +230,19 @@ main {
   color: var(--muted);
 }
 
-.part-catalog-page > .parts .parts-container {
+.parts-container {
   display: flex;
   flex-wrap: wrap;
 }
 
-.part-catalog-page > .parts .parts-container .part-card {
+.parts-container .part-card {
   width: 12em;
   min-height: 15em;
   max-height: 15em;
   margin: 1em;
 
   background-color: #fff;
-  box-shadow: 0 0 1em #f1f1f1;
+  box-shadow: 0 0 1em var(--light-grey);
 
   text-decoration: none;
   overflow: hidden;
@@ -248,23 +251,142 @@ main {
   flex-direction: column;
 }
 
-.part-catalog-page > .parts .parts-container .part-card:hover {
+.parts-container .part-card:hover {
   box-shadow: 0 0 1em #c4c4c4;
 }
 
-.part-catalog-page > .parts .parts-container .part-card h2 {
-  margin: .3em;
+.parts-container .part-card h2 {
+  margin: .3em .6em;
   font-size: 18px;
 }
 
-.part-catalog-page > .parts .parts-container .part-card h3 {
-  margin: .3em;
+.parts-container .part-card h3 {
+  margin: .3em .6em;
   font-size: 16px;
   font-weight: normal;
 }
 
-.part-catalog-page > .parts .parts-container .part-card img {
+.parts-container .part-card img {
   width: 12em;
   height: 10em;
   object-fit: cover;
+}
+
+/** SINGLE PART PAGE **/
+.single-part-page {
+  display: flex;
+  margin: 1em auto;
+}
+
+.single-part-page .part {
+  margin-left: 20px;
+  display: flex;
+  flex: 1;
+}
+
+.single-part-page .part .photo {
+  max-width: 300px;
+  min-width: 300px;
+  min-height: 300px;
+  max-height: 600px;
+  background-color: #fff;
+}
+
+.single-part-page .part .photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: var(--light-grey);
+}
+
+.single-part-page .part .description {
+  margin-left: 30px;
+  flex: 1;
+}
+
+.single-part-page .part .description .part-title {
+  margin-bottom: 0.5em;
+}
+
+.feedback-button {
+  font-size: 18px;
+  font-family: Raleway, sans-serif;
+  margin: 1em 0;
+  padding: .5em 1em;
+  outline: none;
+  border: none;
+  border-radius: 0;
+  color: var(--black);
+  background-color: var(--yellow);
+  cursor: pointer;
+}
+
+.feedback-button:hover {
+  background-color: var(--black);
+  color: var(--yellow);
+}
+
+/** COMMON PAGE **/
+
+.common-page {
+  margin: 3em auto;
+  white-space: pre-line;
+}
+
+.common-page img {
+  display: block;
+  margin: 2em auto;
+}
+
+.common-page ol,
+.common-page ul {
+  margin: 1em 3em;
+}
+
+.common-page ol li,
+.common-page ul li {
+ line-height: 0;
+}
+
+/** FRONT PAGE **/
+.greeting {
+  display: flex;
+  align-items: center;
+  min-height: 500px;
+}
+
+.greeting .text {
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+  font-size: 36px;
+}
+
+.greeting img {
+  object-fit: contain;
+  height: auto;
+}
+
+.catalog-preview {
+  padding: 2em;
+  background-color: var(--light-grey);
+  margin-bottom: 3em;
+}
+
+.catalog-preview .parts-container{
+  justify-content: center;
+}
+
+.catalog-preview .catalog-header {
+  display: inline-block;
+  text-decoration: none;
+  background: none;
+}
+
+.catalog-preview .watch-catalog {
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  margin: 1em;
+  padding: 1em;
 }
